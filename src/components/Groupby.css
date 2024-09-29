@@ -1,0 +1,75 @@
+.card {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    margin: 0px;
+    padding: 5px;
+    width: 300px; /* Adjust as needed */
+    background-color: #ffffff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.user-name {
+    font-size: 1rem;
+}
+
+.card-count {
+    font-size: 1rem;
+    margin-left: 4px;
+}
+
+.card-actions {
+    display: flex;
+}
+
+.add-button,
+.more-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-left: 8px;
+}
+
+.card-body {
+    border-top: 1px solid #e0e0e0;
+    padding-top: 8px;
+}
+
+.card-title {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.card-description {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.status-icon img {
+    width: 16px; /* Adjust icon size */
+    height: 16px;
+    margin-right: 4px;
+}
+
+.card-footer {
+    display: flex;
+    align-items: center;
+}
+
+.priority-icon img {
+    width: 16px; /* Adjust icon size */
+    height: 16px;
+    margin-right: 4px;
+}
+
+.request-type {
+    font-size: 0.9rem;
+}
