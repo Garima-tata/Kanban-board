@@ -67,9 +67,9 @@ const GroupByPriority = ({ id, title, tag, userId, status_of_id, priority , user
     <div>
            <div className="card">
                 <div className="card-body">
-                <div className="card-title"><span className="priority-icon">
+                <div className="card-title">{id}<span className="priority-icon-user">
                     <img src={UserIcon} alt="Priority Icon" />
-                  </span>{id}</div>
+                  </span></div>
                 <div className="card-description">
                     <span className="status-icon">
                     <img src={getIconForTitle(status_of_id)} alt="Status Icon" />

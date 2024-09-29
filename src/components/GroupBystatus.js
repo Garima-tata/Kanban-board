@@ -51,11 +51,10 @@ const GroupBystatus = ({ id, title, tag, userId, status_of_id, priority , userna
     return (
     <div>
            <div className="card">
-           
                 <div className="card-body">
-                <div className="card-title"><span className="priority-icon">
+                <div className="card-title">{id}<span className="priority-icon-user">
                     <img src={UserIcon} alt="Priority Icon" />
-                  </span>{id}</div>
+                  </span></div>
                 <div className="card-description">{title}</div>
                 <div className="card-footer">
                     <span className="priority-icon">

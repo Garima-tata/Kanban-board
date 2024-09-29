@@ -118,8 +118,6 @@ function App() {
         return TodoIcon; // Replace with a default icon if necessary
     }
   };
-  console.log("ticketData.priority");
-  console.log(ticketData);
   const uniquePriorities = ticketData ? getUniquePriorities(ticketData) : [];
   const uniqueStatuses = ticketData ? getUniqueStatuses(ticketData) : [];
   const uniqueUsers = userData ? getUniqueUsers(userData) : [];
@@ -132,8 +130,6 @@ function App() {
         sortMethod={sortMethod} // Pass the sort method to Navbar
         setSortMethod={setSortMethod} // Allow Navbar to change sorting method
       />
-
-      <h1>{selectedGrouping}</h1>
      
       {loading ? (
         <div>Loading...</div>
@@ -182,7 +178,7 @@ function App() {
                           <img src={getIconForTitle(status)} alt="Priority Icon" />
                         </span> {status} </span>
                         <span className="card-count">
-                        {ticketData.priority}
+                        {ticketData.filter(ticket => ticket.status === status).length}
                         </span>
                       <div className="card-actions">
                           <button className="add-button"><img src={Add_Img} alt="Add Icon" /></button>
@@ -212,7 +208,18 @@ function App() {
               <div className="user-columns">
                 {uniqueUsers.map((user) => (
                   <div className="user-column" key={user.id}>
-                    <h3>{user.name}</h3>
+                    <div className="card-header">
+                      <span className="user-name"><span className="priority-icon">
+                          <img src={UserIcon} alt="Priority Icon" />
+                        </span> {user.name} </span>
+                        <span className="card-count">
+                        {ticketData.filter(ticket => ticket.id === user.id)[0]?.priority}
+                        </span>
+                      <div className="card-actions">
+                          <button className="add-button"><img src={Add_Img} alt="Add Icon" /></button>
+                          <button className="more-button"><img src={Menu_Dots} alt="Menu Icon" /></button>
+                      </div>
+                      </div>
                     {sortTickets(ticketData.filter(ticket => ticket.userId === user.id)).map((ticket) => (
                       <GroupByUser
                         key={ticket.id}
@@ -240,180 +247,3 @@ function App() {
 
 export default App;
 
-
-
-// import React, { useState, useEffect } from 'react';
-// import './App.css';
-// import Navbar from './components/Navbar';
-// import GroupBystatus from './components/GroupBystatus';
-// import GroupByUser from './components/GroupByUser';
-// import GroupByPriority from './components/GroupByPriority';
-
-// function App() {
-//   const [ticketData, setTicketData] = useState(null);
-//   const [userData, setUserData] = useState(null);
-//   const [loading, setLoading] = useState(true);
-//   const [selectedGrouping, setSelectedGrouping] = useState('Status'); // State for selected grouping
-
-//   // Fetch data function
-//   async function fetchData() {
-//     try {
-//       const response = await fetch('https://api.quicksell.co/v1/internal/frontend-assignment');
-//       const data_fetched = await response.json();
-//       console.log(data_fetched);
-//       setTicketData(data_fetched.tickets); // Set tickets
-//       setUserData(data_fetched.users); // Set users
-//       setLoading(false); // Update loading state
-//     } catch (error) {
-//       console.error('Error fetching data:', error);
-//       setLoading(false); // Update loading state in case of error
-//     }
-//   }
-
-//   // Call fetchData on component mount
-//   useEffect(() => {
-//     fetchData();
-//   }, []); // Empty dependency array to run once on mount
-
-//   // Function to get unique priorities
-//   const getUniquePriorities = (tickets) => {
-//     const priorities = [...new Set(tickets.map(ticket => ticket.priority))];
-//     return priorities.sort((a, b) => b - a); // Sort by priority (descending)
-//   };
-
-//   // Get tickets by priority
-//   const groupTicketsByPriority = (priority, tickets) => {
-//     return tickets.filter(ticket => ticket.priority === priority);
-//   };
-
-//   // Function to get unique statuses
-//   const getUniqueStatuses = (tickets) => {
-//     const statuses = [...new Set(tickets.map(ticket => ticket.status))];
-//     return statuses;
-//   };
-
-//   // Get tickets by status
-//   const groupTicketsByStatus = (status, tickets) => {
-//     return tickets.filter(ticket => ticket.status === status);
-//   };
-
-//   // Function to get unique users
-//   const getUniqueUsers = (users) => {
-//     return users || [];
-//   };
-
-//   // Get tickets by user
-//   const groupTicketsByUser = (userId, tickets) => {
-//     return tickets.filter(ticket => ticket.userId === userId);
-//   };
-
-//   const getTitleForTag = (priority) => {
-//     switch (priority) {
-//       case 4:
-//         return "Urgent";
-//       case 3:
-//         return "High";
-//       case 2:
-//         return "Medium";
-//       case 1:
-//         return "Low";
-//       default:
-//         return "No priority";
-//     }
-//   };
-
-//   const uniquePriorities = ticketData ? getUniquePriorities(ticketData) : [];
-//   const uniqueStatuses = ticketData ? getUniqueStatuses(ticketData) : [];
-//   const uniqueUsers = userData ? getUniqueUsers(userData) : [];
-
-//   return (
-//     <div className="App">
-//       <Navbar selectGrouping={selectedGrouping} setSelectGrouping={setSelectedGrouping} />
-
-//       <h1>{selectedGrouping}</h1>
-//       {loading ? (
-//         <div>Loading...</div>
-//       ) : (
-//         ticketData && (
-//           <>
-//             {selectedGrouping === 'Priority' ? (
-//               <div className="priority-columns">
-//                 {/* Grouping by priority */}
-//                 {uniquePriorities.map((priority) => (
-//                   <div className="priority-column" key={priority}>
-//                     <h3>{getTitleForTag(priority)}</h3>
-//                     {groupTicketsByPriority(priority, ticketData).map((ticket) => {
-//                       const user = userData ? userData.find(u => u.id === ticket.userId) : null;
-//                       return (
-//                         <GroupByPriority
-//                           key={ticket.id}
-//                           id={ticket.id}
-//                           title={ticket.title}
-//                           tag={ticket.tag[0]}
-//                           userId={ticket.userId}
-//                           status_of_id={ticket.status}
-//                           priority={ticket.priority}
-//                           username={user ? user.name : "Unknown User"}
-//                         />
-//                       );
-//                     })}
-//                   </div>
-//                 ))}
-//               </div>
-//             ) : selectedGrouping === 'Status' ? (
-//               <div className="status-columns">
-//                 {/* Grouping by status */}
-//                 {uniqueStatuses.map((status) => (
-//                   <div className="status-column" key={status}>
-//                     <h3>{status}</h3>
-//                     {groupTicketsByStatus(status, ticketData).map((ticket) => {
-//                       const user = userData ? userData.find(u => u.id === ticket.userId) : null;
-//                       return (
-//                         <GroupBystatus
-//                           key={ticket.id}
-//                           id={ticket.id}
-//                           title={ticket.title}
-//                           tag={ticket.tag[0]}
-//                           userId={ticket.userId}
-//                           status_of_id={ticket.status}
-//                           priority={ticket.priority}
-//                           username={user ? user.name : "Unknown User"}
-//                         />
-//                       );
-//                     })}
-//                   </div>
-//                 ))}
-//               </div>
-//             ) : selectedGrouping === 'User' ? (
-//               <div className="user-columns">
-//                 {/* Grouping by user */}
-//                 {uniqueUsers.map((user) => (
-//                   <div className="user-column" key={user.id}>
-//                     <h3>{user.name}</h3>
-//                     {groupTicketsByUser(user.id, ticketData).map((ticket) => (
-//                       <GroupByUser
-//                         key={ticket.id}
-//                         id={ticket.id}
-//                         title={ticket.title}
-//                         tag={ticket.tag[0]}
-//                         userId={ticket.userId}
-//                         status_of_id={ticket.status}
-//                         priority={ticket.priority}
-//                         username={user.name}
-//                       />
-//                     ))}
-//                   </div>
-//                 ))}
-//               </div>
-//             ) : (
-//               // Default case (if any)
-//               <div>Unknown grouping</div>
-//             )}
-//           </>
-//         )
-//       )}
-//     </div>
-//   );
-// }
-
-// export default App;

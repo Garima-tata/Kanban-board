@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './Navbar.css';
-
+import Display from './icons_FEtask/Display.svg';
+import Down from './icons_FEtask/down.svg';
 const Navbar = ({ selectGrouping, setSelectGrouping, setSortMethod }) => {
   const [showMainDropdown, setShowMainDropdown] = useState(false);
   const [showDropdownOne, setShowDropdownOne] = useState(false);
@@ -36,16 +37,18 @@ const Navbar = ({ selectGrouping, setSelectGrouping, setSortMethod }) => {
   return (
     <nav className="navbar">
       <button className="navbar-button" onClick={toggleMainDropdown}>
+      <img src={Display} alt="Icon" className="button-icon" />
         Options
+        <img src={Down} alt="Icon" className="button-icon" onClick={toggleMainDropdown}/>
       </button>
 
       {showMainDropdown && (
         <div className="main-dropdown">
           <div className="dropdown-group">
             <div className="dropdown-header">
-              Grouping:
+              Grouping
               <div onClick={toggleDropdownOne} className="drop-under-drop">
-                <button className="dropdown-item">{selectGrouping}</button>
+                <button className="dropdown-item">{selectGrouping}<img src={Down} alt="Icon" className="button-icon" onClick={toggleDropdownOne}/></button>
                 {showDropdownOne && (
                   <div className="dropdown-content">
                     {groupingOptions.map((option) => (
@@ -55,8 +58,10 @@ const Navbar = ({ selectGrouping, setSelectGrouping, setSortMethod }) => {
                         onClick={() => handleGroupingSelect(option)}
                       >
                         {option}
+                        
                       </button>
                     ))}
+                    
                   </div>
                 )}
               </div>
@@ -65,9 +70,9 @@ const Navbar = ({ selectGrouping, setSelectGrouping, setSortMethod }) => {
 
           <div className="dropdown-group">
             <div className="dropdown-header">
-              Ordering:
+              Ordering
               <div onClick={toggleDropdownTwo} className="drop-under-drop">
-                <button className="dropdown-item">{selectedOrder}</button>
+                <button className="dropdown-item">{selectedOrder}<img src={Down} alt="Icon" className="button-icon" onClick={toggleDropdownTwo}/></button>
                 {showDropdownTwo && (
                   <div className="dropdown-content">
                     {orderOptions.map((option) => (
