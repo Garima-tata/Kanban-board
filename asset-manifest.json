@@ -1,30 +1,30 @@
 {
   "files": {
-    "main.css": "/my-app/static/css/main.954f96e7.css",
-    "main.js": "/my-app/static/js/main.b0a7fadd.js",
-    "static/js/453.325bd600.chunk.js": "/my-app/static/js/453.325bd600.chunk.js",
-    "static/media/Display.svg": "/my-app/static/media/Display.0168095040354204011b596e30abf32e.svg",
-    "static/media/Cancelled.svg": "/my-app/static/media/Cancelled.360749f102ea2ac68b5841e9f9ff29dd.svg",
-    "static/media/3 dot menu.svg": "/my-app/static/media/3 dot menu.4caedb468f68b915626e0e35045257b3.svg",
-    "static/media/No-priority.svg": "/my-app/static/media/No-priority.7218b139313728c6a4efa8da6e34852b.svg",
-    "static/media/Done.svg": "/my-app/static/media/Done.a5158827c6345b2f141ff681c57cb3ac.svg",
-    "static/media/down.svg": "/my-app/static/media/down.b19d146ddbaad572f0f5cebb6dbdf766.svg",
-    "index.html": "/my-app/index.html",
-    "static/media/Img - Low Priority.svg": "/my-app/static/media/Img - Low Priority.491e21f9000cb90112dea470dbb72650.svg",
-    "static/media/Img - Medium Priority.svg": "/my-app/static/media/Img - Medium Priority.83775665307e977d62e9b0fc7fb95cc4.svg",
-    "static/media/Img - High Priority.svg": "/my-app/static/media/Img - High Priority.5024fd0d163cb13c95f2d29079e2974d.svg",
-    "static/media/SVG - Urgent Priority grey.svg": "/my-app/static/media/SVG - Urgent Priority grey.45cb3c374d391aeb2ee4672390634279.svg",
-    "static/media/add.svg": "/my-app/static/media/add.f84a7335f3fac0026df6cafc2489b65d.svg",
-    "static/media/in-progress.svg": "/my-app/static/media/in-progress.d4beb72fbc94f765259fc46ecaba9779.svg",
-    "static/media/SVG - Urgent Priority colour.svg": "/my-app/static/media/SVG - Urgent Priority colour.9b67f75d5459d4d66573ef9f8e6f6841.svg",
-    "static/media/Backlog.svg": "/my-app/static/media/Backlog.97adf3356b7d2e775ef530f7aed206e0.svg",
-    "static/media/To-do.svg": "/my-app/static/media/To-do.c01d92afcffeef58b2cd9ae080df1f58.svg",
-    "main.954f96e7.css.map": "/my-app/static/css/main.954f96e7.css.map",
-    "main.b0a7fadd.js.map": "/my-app/static/js/main.b0a7fadd.js.map",
-    "453.325bd600.chunk.js.map": "/my-app/static/js/453.325bd600.chunk.js.map"
+    "main.css": "/Kanban-board/static/css/main.954f96e7.css",
+    "main.js": "/Kanban-board/static/js/main.55372f6a.js",
+    "static/js/453.325bd600.chunk.js": "/Kanban-board/static/js/453.325bd600.chunk.js",
+    "static/media/Display.svg": "/Kanban-board/static/media/Display.0168095040354204011b596e30abf32e.svg",
+    "static/media/Cancelled.svg": "/Kanban-board/static/media/Cancelled.360749f102ea2ac68b5841e9f9ff29dd.svg",
+    "static/media/3 dot menu.svg": "/Kanban-board/static/media/3 dot menu.4caedb468f68b915626e0e35045257b3.svg",
+    "static/media/No-priority.svg": "/Kanban-board/static/media/No-priority.7218b139313728c6a4efa8da6e34852b.svg",
+    "static/media/Done.svg": "/Kanban-board/static/media/Done.a5158827c6345b2f141ff681c57cb3ac.svg",
+    "static/media/down.svg": "/Kanban-board/static/media/down.b19d146ddbaad572f0f5cebb6dbdf766.svg",
+    "index.html": "/Kanban-board/index.html",
+    "static/media/Img - Low Priority.svg": "/Kanban-board/static/media/Img - Low Priority.491e21f9000cb90112dea470dbb72650.svg",
+    "static/media/Img - Medium Priority.svg": "/Kanban-board/static/media/Img - Medium Priority.83775665307e977d62e9b0fc7fb95cc4.svg",
+    "static/media/Img - High Priority.svg": "/Kanban-board/static/media/Img - High Priority.5024fd0d163cb13c95f2d29079e2974d.svg",
+    "static/media/SVG - Urgent Priority grey.svg": "/Kanban-board/static/media/SVG - Urgent Priority grey.45cb3c374d391aeb2ee4672390634279.svg",
+    "static/media/add.svg": "/Kanban-board/static/media/add.f84a7335f3fac0026df6cafc2489b65d.svg",
+    "static/media/in-progress.svg": "/Kanban-board/static/media/in-progress.d4beb72fbc94f765259fc46ecaba9779.svg",
+    "static/media/SVG - Urgent Priority colour.svg": "/Kanban-board/static/media/SVG - Urgent Priority colour.9b67f75d5459d4d66573ef9f8e6f6841.svg",
+    "static/media/Backlog.svg": "/Kanban-board/static/media/Backlog.97adf3356b7d2e775ef530f7aed206e0.svg",
+    "static/media/To-do.svg": "/Kanban-board/static/media/To-do.c01d92afcffeef58b2cd9ae080df1f58.svg",
+    "main.954f96e7.css.map": "/Kanban-board/static/css/main.954f96e7.css.map",
+    "main.55372f6a.js.map": "/Kanban-board/static/js/main.55372f6a.js.map",
+    "453.325bd600.chunk.js.map": "/Kanban-board/static/js/453.325bd600.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.954f96e7.css",
-    "static/js/main.b0a7fadd.js"
+    "static/js/main.55372f6a.js"
   ]
 }
